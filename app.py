@@ -710,12 +710,15 @@ def check_usage():
         return jsonify({"status": "error", "message": str(e)}), 500
 
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))
     print("\n" + "="*60)
     print("🚀 智能教材助手 - 完美格式版（标签方案）")
     print("   工欲善其事必先利其器")
     print("="*60)
-    print(f"📍 后端地址: http://0.0.0.0:{port}")
+    print("📍 后端地址: http://localhost:5000")
+    print("🔧 测试翻译: http://localhost:5000/test-deepl")
+    print("📊 查看用量: http://localhost:5000/usage")
+    print("✨ 方案: 标签嵌入 → DeepL翻译 → GPT润色 → 格式还原")
+    print("🎨 格式: H1/H2/H3标题 + 粗体 + 缩进")
     print("="*60 + "\n")
     
-    app.run(host='0.0.0.0', debug=False, port=port)
+    app.run(debug=True, port=5000)
